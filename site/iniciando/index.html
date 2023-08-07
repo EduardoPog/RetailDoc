@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Iniciando - Documentación API Retail</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Iniciando";
+        var mkdocs_page_input_path = "iniciando.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Documentación API Retail
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Iniciando</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#primeros-pasos">Primeros pasos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables-de-entorno">Variables de entorno</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../estructura/">Estructura del proyecto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modulos_api/">Módulos de la API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autenticacion/">Login y autenticaicón</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../endpoints_openapi/">Documentación de los endpoints</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Documentación API Retail</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Iniciando</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="antes-de-iniciar">Antes de iniciar</h1>
+<h2 id="primeros-pasos">Primeros pasos</h2>
+<p>Antes de ejecutar la API, se recomienda crear un entorno virtual para instalar todas las dependencias dentro de este, para hacerlo, ejecute en el intérprete de comandos la instrucción para crear un entorno virtual con Python:</p>
+<pre><code class="language-sh">python -m venv /path/to/venv
+</code></pre>
+<p>Para activarlo, posicionese en la carpeta donde fue creado el entorno virtual y activelo con el comando:</p>
+<pre><code class="language-sh">source bin/activate
+</code></pre>
+<p>Una vez activado correctamente el entorno, proceda a installar las dependencias del archivo <em>requirements.txt</em> que se encuentra en la carpeta raíz del proyecto ejecutando el siguiente comando:</p>
+<pre><code class="language-sh">pip install -r requirements.txt
+</code></pre>
+<p><strong>NOTA: la aplicación esta creada con Python 11, por lo que es posible que algunas versiones de las librerías no esten disponibles para otras versiones de Python por lo que tendrán que ser instaladas manualmente, es posible que el proyecto funcione de manera extraña con otras versiones de las librerías.</strong></p>
+<h2 id="variables-de-entorno">Variables de entorno</h2>
+<p>Por seguridad, los datos sensibles dentro de la aplicación no estan escritos en texto plano, estos datos se consiguen a través de un archivo <em>.env</em> que usted deberá crear en <strong>la carpeta raíz</strong> del proyecto al momento de descargar el repositorio, esta es la lista de las variables de entorno necesarias para que la aplicaicón funcione correctamente</p>
+<ul>
+<li>RETAIL_HOST : Host de la base de datos de Retail</li>
+<li>RETAIL_DB : Base de datos de Retail a la que desea conectarse</li>
+<li>RETAIL_USER : Usuario de la base de datos de Retail</li>
+<li>RETAIL_PW : Contraseña del usuario Retail</li>
+<li>DATA_HOST : Host de la base de datos de PogenData</li>
+<li>DATA_DB : Base de datos de PogenData a la que desea conectarse</li>
+<li>DATA_USER : Usuario de la base de datos de PogenData</li>
+<li>DATA_PW : Contraseña del usuario PogenData</li>
+<li>RECIPIENT_EMAIL : Correo al que se enviarán los reportes de las plazas en el módulo contacto</li>
+<li>SANDBOX_EMAIL : Email proporcionado por la API de Mailgun para enviar correos</li>
+<li>MAILGUN_APIKEY : API Key para utilizar la API de Mailgun</li>
+</ul>
+<h1 id="iniciando-el-proyecto">Iniciando el proyecto</h1>
+<p>Habiendo instalado las dependencias necesarias para el proyecto, ejecute el siguiente comando para iniciar un servidor de Uvicorn desde la carpeta del proyecto</p>
+<pre><code class="language-sh">uvicorn main:app --host 0.0.0.0 --port 8000
+</code></pre>
+<p>El comando de uvicorn recibe como parámetro el nombre del archivo .py principal del proyecto, junto con ello, también se recibe el nombre del objeto FastAPI que contiene toda la aplicación, además recibe como opciones el host y el puerto en el que se desea ejecutar (también es posible agregar la opción --reload por si es necesario editar el código y que se actualize la API en automático cada vez que el código es modificado).
+Al ejecutar este comando verá el siguiente output en la terminal:</p>
+<p><img alt="Aplicación iniciada en consola" src="../img/output.png" /></p>
+<p>Si visita la dirección desde su navegador web deberá de poder visualizar el siguiente mensaje:</p>
+<p><img alt="Mensaje root de la aplicación" src="../img/mensaje_bienvenida.png" /></p>
+<p>Si ha logrado ver esa pantalla, entonces ha logrado hacer que la aplicaicón funcione correctamente.</p>
+<h1 id="docker">Docker</h1>
+<p>Actualmente la aplicación no esta dockerizada, se espera su implementación próximamente.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../estructura/" class="btn btn-neutral float-right" title="Estructura del proyecto">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../estructura/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

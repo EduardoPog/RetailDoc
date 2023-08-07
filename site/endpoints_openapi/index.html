@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Documentación de los endpoints - Documentación API Retail</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Documentaci\u00f3n de los endpoints";
+        var mkdocs_page_input_path = "endpoints_openapi.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Documentación API Retail
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../iniciando/">Iniciando</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../estructura/">Estructura del proyecto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../modulos_api/">Módulos de la API</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autenticacion/">Login y autenticaicón</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Documentación de los endpoints</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Documentación API Retail</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Documentación de los endpoints</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Al utilziar FastAPI se tiene la ventaja de que la documentación se genera de una manera semi-automática utilizando OpenJSON, para acceder a la documentación pruebe en ir a la ruta /docs del host en dónde levantó la API (ej: http://0.0.0.0:8000/docs), allí podrá visualizar la siguiente pantalla:</p>
+<p><img alt="Sitio de documentación de OpenAPI" src="../img/openapi.png" /></p>
+<p>Para entender esta documentación analizemos sus elementos:</p>
+<ol>
+<li>Categorías / Tags</li>
+</ol>
+<p>Los endpoints de la API están agrupados por tags dentro de la aplicación, por lo que si busca algún endpoint relacionado, por ejemplo, con la obtención de usuarios, puede dirigrse a la categoría "Usuarios" y buscar dicho endpoint.</p>
+<p><img alt="Endpoints agrupados por categorías" src="../img/categorias.png" /></p>
+<ol>
+<li>Información del endpoint</li>
+</ol>
+<p>Cada dropdown de los endpoints contiene la información necesaria para saber su método y su ruta, en el siguiente ejemplo tenemos dos endpoints con los métodos PUT y DELETE, si quisiera acceder al endpoint PUT, entonces tendría que acceder mediante la ruta http://HOST:PUERTO/categories/rename_category/</p>
+<p><img alt="Información de los endpoints" src="../img/endpoints.png" /></p>
+<ol>
+<li>Descripción y datos necesarios</li>
+</ol>
+<p>Una vez que seleccione un endpoint visualizará un pequeño recuardro con la información de lo que hace.</p>
+<p><img alt="Descripción del endpoint" src="../img/info_endpoint.png" /></p>
+<p>Debajo de este recuadro encotrará los parámetros necesarios o el formato del body que el endpoint necesita, en la mayoría de los endpoints los parámetros estarán acompañados de una descripción y un ejemplo.</p>
+<p><img alt="Parámetros del endpoint" src="../img/endpoints.png" /></p>
+<p>En este ejemplo podemos ver que el endpoint tiene como parámetros nombre y grupo_id, además de los headers de autenticación que son necesarios para este.</p>
+<p>En este otro ejemplo se puede apreciar el formato necesario de un body request el cuál será necesario para que el endpoint acepte la petición:</p>
+<p><img alt="Ejemplo de body request" src="../img/body.png" /></p>
+<ol>
+<li>Respuesta del endpoint</li>
+</ol>
+<p>Si desea saber que tipo de respuestas puede devolver un endpoint o el formato de estas, al final de los datos puede encontrar una sección con ejemplos de respuestas que puede arrojar una petición hacía ese endpoint.</p>
+<p><img alt="Formato de respuestas de petición" src="../img/response.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../autenticacion/" class="btn btn-neutral float-left" title="Login y autenticaicón"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../autenticacion/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

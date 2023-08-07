@@ -1,0 +1,16 @@
+site_name: 'Documentación API Retail'
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+
+nav:
+  - Home: 'index.md'
+  - 'Iniciando': 'iniciando.md'
+  - 'Estructura del proyecto': 'estructura.md'
+  - 'Módulos de la API': 'modulos_api.md'
+  - 'Login y autenticaicón': 'autenticacion.md'
+  - 'Documentación de los endpoints': 'endpoints_openapi.md'
